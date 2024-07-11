@@ -10,7 +10,6 @@ height = 110.0
 [node name="playericon" type="CharacterBody2D"]
 position = Vector2(0, 1)
 script = ExtResource("1_exlnt")
-jump_force = 750
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -67)
@@ -20,5 +19,3 @@ texture = ExtResource("1_ko6lu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -63)
 shape = SubResource("CapsuleShape2D_cku1a")
-
-[node name="Camera2D" type="Camera2D" parent="."]
