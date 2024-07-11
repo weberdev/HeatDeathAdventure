@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dn1m2t6imo8uv"]
 
-[ext_resource type="Script" path="res://DesaturateController.gd" id="1_8u2f0"]
+[ext_resource type="Script" path="res://GameController.gd" id="1_8u2f0"]
 [ext_resource type="PackedScene" uid="uid://ki1rgxxqao2j" path="res://player.tscn" id="1_udev4"]
 [ext_resource type="Material" uid="uid://eh5qdyifmyr" path="res://DesaturateMaterial.tres" id="2_m4gyk"]
 

@@ -27,3 +27,8 @@ func _physics_process(delta):
 	velocity.x = 300 * horizontal_direction
 	move_and_slide()
 	check_respawn()
+	
+
+func flame_reached():
+	emit_signal("resaturate")
+	print("Flame Reached")
