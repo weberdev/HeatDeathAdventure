@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dn1m2t6imo8uv"]
+[gd_scene load_steps=6 format=3 uid="uid://dn1m2t6imo8uv"]
 
+[ext_resource type="Script" path="res://DesaturateController.gd" id="1_8u2f0"]
 [ext_resource type="PackedScene" uid="uid://ki1rgxxqao2j" path="res://player.tscn" id="1_udev4"]
+[ext_resource type="Material" uid="uid://eh5qdyifmyr" path="res://DesaturateMaterial.tres" id="2_m4gyk"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_2qlrw"]
 size = Vector2(1000, 100)
@@ -9,6 +11,8 @@ size = Vector2(1000, 100)
 size = Vector2(1002, 106)
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_8u2f0")
+desaturate_material = ExtResource("2_m4gyk")
 
 [node name="playericon" parent="." instance=ExtResource("1_udev4")]
 position = Vector2(239, 180)
@@ -23,3 +27,13 @@ mesh = SubResource("QuadMesh_2qlrw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
 position = Vector2(499, 360)
 shape = SubResource("RectangleShape2D_bjmju")
+
+[node name="DesaturateLayer" type="CanvasLayer" parent="."]
+
+[node name="DesaturateColorRect" type="ColorRect" parent="DesaturateLayer"]
+material = ExtResource("2_m4gyk")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
