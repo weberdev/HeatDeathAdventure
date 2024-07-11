@@ -3,6 +3,15 @@ extends CharacterBody2D
 @export var speed = 300
 @export var gravity = 30
 @export var jump_force = 300
+var start_position = Vector2(100, 0)
+const RESPAWN_PLANE = 3500.0
+
+func respawn():
+	global_position = start_position
+
+func check_respawn():
+	if global_position.y > RESPAWN_PLANE:
+		respawn()
 
 func _physics_process(delta):
 	if !is_on_floor():
@@ -17,5 +26,4 @@ func _physics_process(delta):
 	var horizontal_direction = Input.get_axis("move_left", "move_right")
 	velocity.x = 300 * horizontal_direction
 	move_and_slide()
-	
-	print(velocity)
+	check_respawn()
