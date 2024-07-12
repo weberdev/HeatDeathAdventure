@@ -6,9 +6,9 @@ signal goal_reached
 var start_time: float = 0.0
 var x_pos_scalar = 4000
 var x_pos_to_spawn = 500
-var goal_scene = preload("res://goalflame.tscn")
-var player_scene = preload("res://player.tscn")  # Renamed for clarity
-var tile = preload("res://tile.tscn")
+var goal_scene = preload("res://scenes/goalflame.tscn")
+var player_scene = preload("res://scenes/player.tscn")  # Renamed for clarity
+var tile = preload("res://scenes/tile.tscn")
 
 func _ready():
 	start_time = Time.get_ticks_msec() / 1000.0

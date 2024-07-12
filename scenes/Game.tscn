@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dn1m2t6imo8uv"]
 
-[ext_resource type="Script" path="res://GameController.gd" id="1_8u2f0"]
-[ext_resource type="Material" uid="uid://eh5qdyifmyr" path="res://DesaturateMaterial.tres" id="2_m4gyk"]
+[ext_resource type="Script" path="res://scripts/GameController.gd" id="1_8u2f0"]
+[ext_resource type="Material" uid="uid://eh5qdyifmyr" path="res://shader/DesaturateMaterial.tres" id="2_m4gyk"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_2qlrw"]
 size = Vector2(1000, 100)

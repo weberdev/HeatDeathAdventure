@@ -9,7 +9,7 @@ var x_pos_to_spawn = 500
 var x_pos_scalar = 2000
 signal need_more_tiles
 
-var tile = preload("res://tile.tscn")
+var tile = preload("res://scenes/tile.tscn")
 
 func respawn():
 	global_position = Vector2(max(x_pos_to_spawn-2000, 500), 0)
