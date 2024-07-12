@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dn1m2t6imo8uv"]
+[gd_scene load_steps=8 format=3 uid="uid://dn1m2t6imo8uv"]
 
 [ext_resource type="Script" path="res://scripts/GameController.gd" id="1_8u2f0"]
 [ext_resource type="Material" uid="uid://eh5qdyifmyr" path="res://shader/DesaturateMaterial.tres" id="2_m4gyk"]
+[ext_resource type="Texture2D" uid="uid://dwux3ja2eey5y" path="res://assets/background_far.png" id="3_8o7ql"]
+[ext_resource type="Texture2D" uid="uid://bhsws7nnlbrpr" path="res://assets/sky.png" id="3_op3wb"]
+[ext_resource type="Texture2D" uid="uid://bgeu043y0m5d1" path="res://assets/background_near.png" id="5_ti0xx"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_2qlrw"]
 size = Vector2(1000, 100)
@@ -17,11 +20,11 @@ desaturate_material = ExtResource("2_m4gyk")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Platform"]
 modulate = Color(0, 0.964692, 0.266474, 1)
-position = Vector2(496, 533)
+position = Vector2(500, 527)
 mesh = SubResource("QuadMesh_2qlrw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
-position = Vector2(491, 525)
+position = Vector2(500, 525)
 shape = SubResource("RectangleShape2D_bjmju")
 
 [node name="DesaturateLayer" type="CanvasLayer" parent="."]
@@ -34,3 +37,40 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/sky"]
+position = Vector2(577, 325)
+scale = Vector2(1.79375, 1.34728)
+texture = ExtResource("3_op3wb")
+
+[node name="background_far" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0)
+motion_mirroring = Vector2(1080, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/background_far"]
+position = Vector2(316, 390)
+scale = Vector2(1.7125, 2.1375)
+texture = ExtResource("3_8o7ql")
+
+[node name="background_far2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0)
+motion_mirroring = Vector2(1080, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/background_far2"]
+position = Vector2(903, 390)
+scale = Vector2(1.7125, 2.1375)
+texture = ExtResource("3_8o7ql")
+
+[node name="background_near" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(2, 0)
+motion_mirroring = Vector2(1080, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/background_near"]
+position = Vector2(576, 597)
+scale = Vector2(1.151, 1)
+texture = ExtResource("5_ti0xx")
