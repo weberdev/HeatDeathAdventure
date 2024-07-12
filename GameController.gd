@@ -22,7 +22,6 @@ func _ready():
 
 	# Instance and add the initial tile to the scene
 	var tile_instance = tile.instantiate()
-	add_child(tile_instance)
 
 	# Instance and add the goal to the scene
 	var goal_instance = goal_scene.instantiate()
