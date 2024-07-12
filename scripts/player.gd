@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed = 300
 @export var gravity = 30
-@export var jump_force = 300
+@export var jump_force = 500 
 var start_position = Vector2(100, 0)
 const RESPAWN_PLANE = 3500.0
 var x_pos_to_spawn = 500
@@ -12,7 +12,7 @@ signal need_more_tiles
 var tile = preload("res://tile.tscn")
 
 func respawn():
-	global_position = start_position
+	global_position = Vector2(max(x_pos_to_spawn-2000, 500), 0)
 
 func check_respawn():
 	if global_position.y > RESPAWN_PLANE:
