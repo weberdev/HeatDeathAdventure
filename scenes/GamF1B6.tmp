@@ -30,6 +30,7 @@ shape = SubResource("RectangleShape2D_bjmju")
 [node name="DesaturateLayer" type="CanvasLayer" parent="."]
 
 [node name="DesaturateColorRect" type="ColorRect" parent="DesaturateLayer"]
+visible = false
 material = ExtResource("2_m4gyk")
 anchors_preset = 15
 anchor_right = 1.0
