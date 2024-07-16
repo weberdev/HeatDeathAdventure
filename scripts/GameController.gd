@@ -39,6 +39,7 @@ func _process(delta):
 		print(desaturation)
 		if desaturation >= 1:
 			end_game()
+			
 
 # Restart the timer and desaturation when the flame is reached
 func _on_flame_reached():
