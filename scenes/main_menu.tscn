@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnlipacufmhow"]
+[gd_scene load_steps=3 format=3 uid="uid://25ibcj8e7gir"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_asqb4"]
-[ext_resource type="Texture2D" uid="uid://bjmin5bngwqjc" path="res://assets/title.png" id="2_jkij0"]
+[ext_resource type="Texture2D" uid="uid://b7a1m58xyaj1l" path="res://assets/Ephemeral Title.png" id="2_u6yqd"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -40,8 +40,8 @@ layout_mode = 2
 text = "Quit"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(345, 12)
-texture = ExtResource("2_jkij0")
+position = Vector2(425, 10)
+texture = ExtResource("2_u6yqd")
 centered = false
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
