@@ -13,7 +13,7 @@ script = ExtResource("1_uhmpk")
 jump_force = 750
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -67)
+position = Vector2(0, -119)
 texture = ExtResource("2_1uu7d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
