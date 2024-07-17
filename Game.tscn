@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://db4j0hq68msco"]
+
+[ext_resource type="Script" path="res://scripts/GameController.gd" id="1_y4l3l"]
+[ext_resource type="Material" uid="uid://eh5qdyifmyr" path="res://shader/DesaturateMaterial.tres" id="2_t2bf2"]
+[ext_resource type="AudioStream" uid="uid://c5dgys2e870em" path="res://audio/heatdeath_withatmosphere.mp3" id="3_kwo0x"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_2qlrw"]
+size = Vector2(1000, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjmju"]
+size = Vector2(1002, 106)
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_y4l3l")
+desaturation_time = 5.0
+
+[node name="Platform" type="StaticBody2D" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform"]
+modulate = Color(0, 0.964692, 0.266474, 1)
+position = Vector2(496, 533)
+mesh = SubResource("QuadMesh_2qlrw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(491, 525)
+shape = SubResource("RectangleShape2D_bjmju")
+
+[node name="DesaturateLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="DesaturateColorRect" type="ColorRect" parent="DesaturateLayer"]
+material = ExtResource("2_t2bf2")
+use_parent_material = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_kwo0x")
+autoplay = true

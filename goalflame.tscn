@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlqgw6x2uq4dq"]
+[gd_scene load_steps=4 format=3 uid="uid://bo75spx0ivmhg"]
 
-[ext_resource type="Script" path="res://scripts/goalflame.gd" id="1_3m2rm"]
-[ext_resource type="Texture2D" uid="uid://bgppl3km07t5f" path="res://assets/Torch Asset Thing Transparent.png" id="2_8ppqi"]
+[ext_resource type="Script" path="res://goalflame.gd" id="1_3m2rm"]
+[ext_resource type="Texture2D" path="res://Torch Asset Thing Transparent.png" id="2_8ppqi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v3sc8"]
 radius = 34.0
@@ -10,10 +10,10 @@ height = 180.0
 [node name="Flame icon" type="Area2D"]
 script = ExtResource("1_3m2rm")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_v3sc8")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="TorchAssetThingTransparent" type="Sprite2D" parent="."]
 position = Vector2(4.00001, -4)

@@ -10,8 +10,11 @@ var goal_scene = preload("res://scenes/goalflame.tscn")
 var player_scene = preload("res://scenes/player.tscn")  # Renamed for clarity
 var tile = preload("res://scenes/tile.tscn")
 
+
 func _ready():
 	start_time = Time.get_ticks_msec() / 1000.0
+	var audio_player = $AudioStreamPlayer
+	audio_player.play()
 
 	# Instance and add the player to the scene
 	var player_instance = player_scene.instantiate()
