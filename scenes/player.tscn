@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ki1rgxxqao2j"]
+[gd_scene load_steps=5 format=3 uid="uid://ki1rgxxqao2j"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_uhmpk"]
 [ext_resource type="Texture2D" uid="uid://bkg5k5xo4mo24" path="res://assets/YiikSprite.png" id="2_1uu7d"]
+[ext_resource type="AudioStream" uid="uid://doi4ulw0c1xb4" path="res://audio/heatdeath.wav" id="3_swlhl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cku1a"]
 radius = 31.0
@@ -21,3 +22,7 @@ position = Vector2(0, -63)
 shape = SubResource("CapsuleShape2D_cku1a")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_swlhl")
+autoplay = true
