@@ -15,13 +15,12 @@ extends StaticBody2D
 
 var rng = RandomNumberGenerator.new()
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	var sprite = $Sprite  # Assuming you are using a Sprite node now
+	var sprite = $Sprite
 	var random_index = rng.randi_range(0, tile_images.size() - 1)
 	var random_texture = tile_images[random_index]
 	sprite.texture = random_texture
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	pass

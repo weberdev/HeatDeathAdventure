@@ -12,7 +12,7 @@ signal need_more_tiles
 var tile = preload("res://scenes/tile.tscn")
 
 func _ready():
-	$AnimatedSprite2D.play("walk")  # Start with the walk animation
+	$AnimatedSprite2D.play("walk")
 
 func respawn():
 	global_position = Vector2(max(x_pos_to_spawn-2000, 500), 0)
@@ -34,7 +34,6 @@ func _physics_process(delta):
 	var horizontal_direction = Input.get_axis("move_left", "move_right")
 	velocity.x = speed * horizontal_direction
 	
-	# Control animation based on movement
 	if horizontal_direction != 0:
 		$AnimatedSprite2D.flip_h = horizontal_direction < 0
 		if !$AnimatedSprite2D.is_playing() or $AnimatedSprite2D.animation != "walk":

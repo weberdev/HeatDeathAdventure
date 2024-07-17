@@ -7,28 +7,28 @@ var start_time: float = 0.0
 var x_pos_scalar = 4000
 var x_pos_to_spawn = 500
 var goal_scene = preload("res://scenes/goalflame.tscn")
-var player_scene = preload("res://scenes/player.tscn")  # Renamed for clarity
+var player_scene = preload("res://scenes/player.tscn")
 var tile = preload("res://scenes/tile.tscn")
 
 func _ready():
 	start_time = Time.get_ticks_msec() / 1000.0
 
-	# Instance and add the player to the scene
+	#Create Player
 	var player_instance = player_scene.instantiate()
 	add_child(player_instance)
 	
-	# Connect the player's need_more_tiles signal to this script
+	#connect to Need_more_tiles
 	player_instance.connect("need_more_tiles", Callable(self, "need_more_tiles"))
 
-	# Instance and add the initial tile to the scene
+	#define a tile
 	var tile_instance = tile.instantiate()
 
-	# Instance and add the goal to the scene
+	#Create a goal
 	var goal_instance = goal_scene.instantiate()
 	add_child(goal_instance)
 	goal_instance.position = Vector2(400, 300)
 
-	# Connect the goal's flame_reached signal to this script
+	#connect to goal_reached
 	goal_instance.connect("flame_reached", Callable(self, "_on_flame_reached"))
 
 func _process(delta):
@@ -47,11 +47,15 @@ func _on_flame_reached():
 	desaturate_material.set("shader_param/desaturation", 0.0)  # Reset desaturation
 	print("Flame Reached - Resaturate")
 
-# End the game
+#Crashing this game
+#with no survivors
 func end_game():
+	#I'd put an audio cue here, but that's fine
 	get_tree().quit()
 
-# Function to handle the need_more_tiles signal
+#Generate tiles
+#the color picker is unused now: we have actual art instead!
+#I'm not touching it in case I break something.
 func need_more_tiles():
 	var rng = RandomNumberGenerator.new()
 	for i in range(x_pos_to_spawn, x_pos_to_spawn + x_pos_scalar, 150):
