@@ -1,8 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://ki1rgxxqao2j"]
+[gd_scene load_steps=10 format=3 uid="uid://ki1rgxxqao2j"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_uhmpk"]
-[ext_resource type="Texture2D" uid="uid://bkg5k5xo4mo24" path="res://assets/YiikSprite.png" id="2_1uu7d"]
+[ext_resource type="Texture2D" uid="uid://cxt36b4ge422u" path="res://assets/Animation/frame1.png" id="2_4whn0"]
+[ext_resource type="Texture2D" uid="uid://uiouexpgniou" path="res://assets/Animation/frame2.png" id="3_6t6sv"]
 [ext_resource type="AudioStream" uid="uid://doi4ulw0c1xb4" path="res://audio/heatdeath.wav" id="3_swlhl"]
+[ext_resource type="Texture2D" uid="uid://ilri2dqlcpha" path="res://assets/Animation/frame3.png" id="4_kjtob"]
+[ext_resource type="Texture2D" uid="uid://ovsc0eia2hc1" path="res://assets/Animation/frame4.png" id="5_2g6u4"]
+[ext_resource type="Texture2D" uid="uid://dst180ub6gwwk" path="res://assets/Animation/frame5.png" id="6_40nk7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k674f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4whn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6t6sv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kjtob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2g6u4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_40nk7")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cku1a"]
 radius = 31.0
@@ -14,9 +41,11 @@ position = Vector2(0, 1)
 script = ExtResource("1_uhmpk")
 jump_force = 750
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -119)
-texture = ExtResource("2_1uu7d")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -60)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_k674f")
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -63)
