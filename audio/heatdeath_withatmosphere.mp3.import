@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/heatdeath_withatmosphere.mp3-3a263ab42dc0853d
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
