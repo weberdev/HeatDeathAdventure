@@ -10,11 +10,8 @@ var goal_scene = preload("res://scenes/goalflame.tscn")
 var player_scene = preload("res://scenes/player.tscn")  # Renamed for clarity
 var tile = preload("res://scenes/tile.tscn")
 
-
 func _ready():
 	start_time = Time.get_ticks_msec() / 1000.0
-	var audio_player = $AudioStreamPlayer
-	audio_player.play()
 
 	# Instance and add the player to the scene
 	var player_instance = player_scene.instantiate()
@@ -71,4 +68,4 @@ func need_more_tiles():
 			new_tile.position= Vector2(i+150, new_y_pos)
 		new_tile.modulate = random_color
 		add_child(new_tile)
-	x_pos_to_spawn += x_pos_scalar	
+	x_pos_to_spawn += x_pos_scalar
